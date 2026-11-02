@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Aegis</title>
+    <link rel="icon" type="image/png" href="img/logo-coin.png">
+    <link rel="stylesheet" href="style.css">
+</head>
+
+<body>
+    <!-- ฉากหลัง-->
+    <div class="game-container">
+
+        <!-- โลโก้-->
+        <div class="logo-container">
+            <img src="img/logo.png" alt="The Aegis Logo" class="floating-logo">
+        </div>
+
+        <!-- ปุ่มเชื่อมต่อ MetaMask -->
+        <div class="top-right-nav">
+            <button id="btn-connect" class="menu-btn connect-btn">Connect Wallet</button>
+            <div id="lobby-coin-box" class="stats-container-menu" style="display: none;">COINS : <span id="lobby-coin">0</span></div>
+        </div>
+
+        <!-- กล่องเมนูหลัก  -->
+        <div class="menu-box">
+            <div class="menu-header">
+                <h2>MAIN MENU</h2>
+            </div>
+            <div class="menu-content">
+
+                <button id="btn-demo" class="menu-btn demo-btn" style="display: block;">Guest</button>
+                <!-- ปุ่มเข้าเและถอนเหรียญ (โดนล็อกไว้จนกว่าจะเชื่อมกระเป๋า) -->
+                <button id="btn-play" class="menu-btn play-btn" disabled>PLAY</button>
+                <button id="btn-vault" class="menu-btn vault-btn" disabled>Withdraw</button>
+            </div>
+        </div>
+
+        <!-- Game UI -->
+        <div id="game-ui" style="display: none;">
+            <button id="btn-back" class="menu-btn">Back</button>
+            <div id="warning" class="warning" style="display: none;">Connect Wallet to Earn Coins</div>
+            <!-- กระดานนับเหรียญ -->
+            <div class="stats-container">
+                <div class="coin-display">COINS : <span id="coin-count">0</span></div>
+            </div>
+
+            <!-- ตัวละคร monster -->
+            <div id="roshan-container">
+                <img src="img/monster-transparent.png" id="roshan-character" alt="Roshan">
+            </div>
+        </div>
+
+        <!-- หน้าถอนเหรียญ -->
+        <div id="vault-modal" class="modal-overlay" style="display: none;">
+            <div class="modal-box">
+                <h2>THE VAULT</h2>
+                <p>Available Balance: <span id="vault-balance" style="color: #ffb700;">0</span> AEGIS</p>
+
+                <div class="input-group">
+                    <input type="number" id="withdraw-amount" placeholder="Enter amount..." min="1">
+                </div>
+
+                <div class="modal-actions">
+                    <button id="btn-confirm-withdraw" class="menu-btn connect-btn">Confirm Withdraw</button>
+                    <button id="btn-close-vault" class="menu-btn demo-btn">Cancel</button>
+                </div>
+            </div>
+        </div>
+    </div>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/ethers/5.7.2/ethers.umd.min.js"></script>
+    <script src="app.js"></script>
+</body>
+
+</html>
