@@ -182,7 +182,7 @@ document.addEventListener("DOMContentLoaded", () => {
     // ==========================================
 
     // ตีมอน
-    roshanChar.addEventListener("mousedown", (e) => {
+    roshanChar.addEventListener("pointerdown", (e) => {
         if (currentAccount) {
             coins += 1;
             unsavedCoins += 1;
@@ -200,12 +200,16 @@ document.addEventListener("DOMContentLoaded", () => {
     });
 
     // ปล่อยเมาส์ (คืนสภาพ)
-    roshanChar.addEventListener("mouseup", () => roshanChar.classList.remove("hit-effect"));
-    roshanChar.addEventListener("mouseup", () => roshanChar.classList.remove("attacking"));
+    roshanChar.addEventListener("pointerup", () => {
+        roshanChar.classList.remove("hit-effect");
+        roshanChar.classList.remove("attacking");
+    });
 
     // ลากเมาส์ออก (คืนสภาพกันบั๊ก)
-    roshanChar.addEventListener("mouseleave", () => roshanChar.classList.remove("hit-effect"));
-    roshanChar.addEventListener("mouseleave", () => roshanChar.classList.remove("attacking"));
+    roshanChar.addEventListener("pointerleave", () => {
+        roshanChar.classList.remove("hit-effect");
+        roshanChar.classList.remove("attacking");
+    });
 
     // สร้างตัวเลข "+1" ลอย
     function createFloatingCoin(x, y) {

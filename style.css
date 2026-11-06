@@ -343,6 +343,7 @@ html {
     filter: drop-shadow(0 10px 20px rgba(0, 0, 0, 0.6));
     user-select: none;
     -webkit-user-drag: none;
+    touch-action: manipulation;
 }
 
 .hit-effect {
